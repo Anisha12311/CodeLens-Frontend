@@ -1,0 +1,240 @@
+@import 'tailwindcss';
+
+/* Dark first. Light applies when the system asks for it, or when data-theme="light" is set. */
+:root {
+  --bg: #0a0c11;
+  --halo: #1a1640;
+  --panel: #11141b;
+  --panel-2: #171b24;
+  --cell: #141821;
+  --ink: #eceff5;
+  --ink-2: #a0a8b7;
+  --ink-3: #6e7787;
+  --line: #20252f;
+  --line-2: #2b313d;
+  --idle: #3b4353;
+  --axis: #2e3542;
+  --dot: #1d222c;
+  --accent: #8b7cff;
+  --accent-ink: #0d0a24;
+  --accent-soft: #221e45;
+  --st-active: #38d6f5;
+  --st-compare: #ffc83d;
+  --st-swap: #ff6b9a;
+  --st-done: #3ee08f;
+  --on-st: #0b1620;
+  --t-active: #5fdef8;
+  --t-compare: #ffd25e;
+  --t-swap: #ff8db1;
+  --t-done: #5fe6a2;
+  --muted-fill: #161a22;
+  --muted-ink: #5c6575;
+  --kw: #c3a6ff;
+  --str: #8fe3b0;
+  --com: #6e7787;
+  --bad: #ff8da6;
+  --good: #5fe6a2;
+  --card-shadow: 0 1px 0 0 #ffffff08 inset, 0 18px 40px -24px #000000;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #f4f5f9;
+    --halo: #e4e1ff;
+    --panel: #ffffff;
+    --panel-2: #f6f7fa;
+    --cell: #ffffff;
+    --ink: #12151c;
+    --ink-2: #545c6b;
+    --ink-3: #868e9c;
+    --line: #e5e7ed;
+    --line-2: #d9dce4;
+    --idle: #c2c7d1;
+    --axis: #cdd1d9;
+    --dot: #e3e6ec;
+    --accent: #6250f0;
+    --accent-ink: #ffffff;
+    --accent-soft: #ece9ff;
+    --st-active: #12b5ea;
+    --st-compare: #f2b705;
+    --st-swap: #ef4f7a;
+    --st-done: #1db56b;
+    --on-st: #0f1d28;
+    --t-active: #0a82ad;
+    --t-compare: #a87800;
+    --t-swap: #c42c58;
+    --t-done: #128049;
+    --muted-fill: #eef0f4;
+    --muted-ink: #9aa2ae;
+    --kw: #7a2fd0;
+    --str: #0b6e4f;
+    --com: #868e9c;
+    --bad: #c8264f;
+    --good: #128049;
+    --card-shadow: 0 1px 2px #12151c0a, 0 12px 32px -20px #12151c33;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f5f9;
+  --halo: #e4e1ff;
+  --panel: #ffffff;
+  --panel-2: #f6f7fa;
+  --cell: #ffffff;
+  --ink: #12151c;
+  --ink-2: #545c6b;
+  --ink-3: #868e9c;
+  --line: #e5e7ed;
+  --line-2: #d9dce4;
+  --idle: #c2c7d1;
+  --axis: #cdd1d9;
+  --dot: #e3e6ec;
+  --accent: #6250f0;
+  --accent-ink: #ffffff;
+  --accent-soft: #ece9ff;
+  --st-active: #12b5ea;
+  --st-compare: #f2b705;
+  --st-swap: #ef4f7a;
+  --st-done: #1db56b;
+  --on-st: #0f1d28;
+  --t-active: #0a82ad;
+  --t-compare: #a87800;
+  --t-swap: #c42c58;
+  --t-done: #128049;
+  --muted-fill: #eef0f4;
+  --muted-ink: #9aa2ae;
+  --kw: #7a2fd0;
+  --str: #0b6e4f;
+  --com: #868e9c;
+  --bad: #c8264f;
+  --good: #128049;
+  --card-shadow: 0 1px 2px #12151c0a, 0 12px 32px -20px #12151c33;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-halo: var(--halo);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-cell: var(--cell);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-idle: var(--idle);
+  --color-axis: var(--axis);
+  --color-dot: var(--dot);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-st-active: var(--st-active);
+  --color-st-compare: var(--st-compare);
+  --color-st-swap: var(--st-swap);
+  --color-st-done: var(--st-done);
+  --color-on-st: var(--on-st);
+  --color-t-active: var(--t-active);
+  --color-t-compare: var(--t-compare);
+  --color-t-swap: var(--t-swap);
+  --color-t-done: var(--t-done);
+  --color-muted-fill: var(--muted-fill);
+  --color-muted-ink: var(--muted-ink);
+  --color-kw: var(--kw);
+  --color-str: var(--str);
+  --color-com: var(--com);
+  --color-bad: var(--bad);
+  --color-good: var(--good);
+  --color-active-soft: color-mix(in srgb, var(--st-active) 12%, var(--cell));
+  --color-compare-soft: color-mix(in srgb, var(--st-compare) 12%, var(--cell));
+  --color-swap-soft: color-mix(in srgb, var(--st-swap) 12%, var(--cell));
+  --color-done-soft: color-mix(in srgb, var(--st-done) 12%, var(--cell));
+  --color-glow-active: color-mix(in srgb, var(--st-active) 60%, transparent);
+  --color-glow-compare: color-mix(in srgb, var(--st-compare) 55%, transparent);
+  --color-glow-swap: color-mix(in srgb, var(--st-swap) 55%, transparent);
+  --color-glow-done: color-mix(in srgb, var(--st-done) 45%, transparent);
+  --color-glow-accent: color-mix(in srgb, var(--accent) 55%, transparent);
+  --shadow-card: var(--card-shadow);
+  --font-display: var(--font-sora), 'Trebuchet MS', sans-serif;
+  --font-sans: var(--font-figtree), 'Segoe UI', system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+body {
+  background: radial-gradient(900px 480px at 78% -8%, var(--halo), transparent 70%), var(--bg);
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+/* Monaco draws its own DOM, so the current-line marker needs a real class rather than a utility. */
+.code-lens-current-line {
+  background: color-mix(in srgb, var(--st-active) 14%, transparent);
+  box-shadow: inset 3px 0 0 var(--st-active);
+}
+
+.code-lens-current-line-number {
+  color: var(--t-active) !important;
+  font-weight: 700;
+}
+
+.stage-dots {
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  background-position: 11px 11px;
+}
+
+.scrub {
+  --progress: 0%;
+  appearance: none;
+  background: none;
+}
+
+.scrub::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--accent) var(--progress),
+    var(--line-2) var(--progress)
+  );
+}
+
+.scrub::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--accent) var(--progress),
+    var(--line-2) var(--progress)
+  );
+}
+
+.scrub::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.scrub::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid var(--accent);
+}
+
+@keyframes status-pulse {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
